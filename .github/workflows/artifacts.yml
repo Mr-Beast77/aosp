@@ -13,18 +13,21 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - name: Source all.sh
+
+      - name: Source slim.sh
         run: |
-          source all.sh
+          source slim.sh &
+      
+      - name: Source common.sh
+        run: |
+          source common.sh &
           ls
-      - name: Source slim2
-        run: |
-          source slim2
+      
       - name: Upload cache from job 1
         uses: actions/upload-artifact@v2
         with:
           name: cache
-          path: /home/runner/all.sh
+          path: all.sh
 
   job_2:
     name: both download and upload
