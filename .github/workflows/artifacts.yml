@@ -19,12 +19,12 @@ jobs:
 
 
       - name: Source slim.sh & common.sh
-        timeout-minutes: 1
+        timeout-minutes: 330
         continue-on-error: true
         run: |
           source slim.sh &
           source common.sh
-          sleep 600
+          sleep 60
           echo slept
 
 
