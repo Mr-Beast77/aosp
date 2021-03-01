@@ -1,3 +1,2 @@
 #!/bin/bash
-pwd
-sleep 10s
+echo from common.sh
