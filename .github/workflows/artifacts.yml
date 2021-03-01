@@ -16,12 +16,15 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+      - timeout-minutes: 1
 
 
       - name: Source slim.sh & common.sh
         run: |
           source slim.sh &
           source common.sh
+          sleep 600
+          echo slept
 
 
       - name: Upload cache from job 1
