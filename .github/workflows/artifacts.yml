@@ -6,7 +6,6 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: /home/runner
 
 jobs:
   job_1:
