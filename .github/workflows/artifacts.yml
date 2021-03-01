@@ -51,7 +51,7 @@ jobs:
           name: cache
       - shell: bash
         run: |
-          pigz -d cache.tar.gz
+          tar -I pigz -xf cache.tar.gz
           ls -lah
       - name: Upload math result for job 2
         uses: actions/upload-artifact@v2
@@ -72,5 +72,5 @@ jobs:
       - name: Print the final result
         shell: bash
         run: |
-          pigz -d cache.tar.gz
+          tar -I pigz -xf cache.tar.gz
           echo bye
