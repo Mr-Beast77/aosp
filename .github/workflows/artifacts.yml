@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - timeout-minutes: 1
 
 
       - name: Source slim.sh & common.sh
+        timeout-minutes: 1
         run: |
           source slim.sh &
           source common.sh
