@@ -49,8 +49,8 @@ jobs:
       - name: Upload math result for job 2
         uses: actions/upload-artifact@v2
         with:
-          name: test
-          path: test.txt
+          name: cache
+          path: common.sh
 
   job_3:
     name: download only
@@ -60,7 +60,7 @@ jobs:
       - name: Download math result for job 2
         uses: actions/download-artifact@v2
         with:
-          name: test
+          name: common.sh
       - name: Print the final result
         shell: bash
         run: |
