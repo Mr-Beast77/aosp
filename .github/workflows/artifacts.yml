@@ -52,6 +52,9 @@ jobs:
       - shell: bash
         run: |
           tar -I pigz -xf cache.tar.gz
+          rm -rf cache.tar.gz
+          ls -lah
+          tar --use-compress-program="pigz -1" -cf cache.tar.gz common.sh
           ls -lah
       - name: Upload math result for job 2
         uses: actions/upload-artifact@v2
@@ -73,4 +76,5 @@ jobs:
         shell: bash
         run: |
           tar -I pigz -xf cache.tar.gz
+          rm -rf cache.tar.gz
           echo bye
