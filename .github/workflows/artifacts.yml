@@ -13,9 +13,9 @@ jobs:
     name: upload only 
     runs-on: ubuntu-20.04
     steps:
-      - run: |
-          echo 111 > /tmp/hi
-          pwd
+      - name: Source all.sh
+        run: |
+          source all.sh
       - name: Upload math result for job 1
         uses: actions/upload-artifact@v2
         with:
