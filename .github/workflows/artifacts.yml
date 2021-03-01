@@ -31,6 +31,7 @@ jobs:
         with:
           name: cache
           path: common.sh
+          retention-days: 3
 
 
   job_2:
@@ -51,6 +52,7 @@ jobs:
         with:
           name: cache
           path: common.sh
+          retention-days: 3
 
   job_3:
     name: download only
@@ -61,6 +63,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: cache
+          retention-days: 3
       - name: Print the final result
         shell: bash
         run: |
