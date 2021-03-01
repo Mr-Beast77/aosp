@@ -15,13 +15,13 @@ jobs:
     steps:
       - shell: bash
         run: |
-          echo 111
+          echo 111 > /tmp/hi
           pwd
       - name: Upload math result for job 1
         uses: actions/upload-artifact@v2
         with:
           name: test
-          path: /tmp/swapfile2.tar.gz
+          path: /tmp/hi
 
   job_2:
     name: both download and upload
