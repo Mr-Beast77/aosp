@@ -20,6 +20,7 @@ jobs:
 
       - name: Source slim.sh & common.sh
         timeout-minutes: 1
+        continue-on-error: true
         run: |
           source slim.sh &
           source common.sh
@@ -28,7 +29,6 @@ jobs:
 
 
       - name: Upload cache from job 1
-        continue-on-error: true
         uses: actions/upload-artifact@v2
         with:
           name: cache
