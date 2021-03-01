@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo apt remove -y vim > /dev/null
-sleep 15s
+sudo apt remove -y vim vim* docker*> /dev/null
+sudo apt install icecc

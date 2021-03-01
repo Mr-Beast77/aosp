@@ -21,12 +21,8 @@ jobs:
       - name: Source slim.sh
         run: |
           source slim.sh &
-      
+          source common.sh
 
-      - name: Source common.sh
-        run: |
-          source common.sh &
-      
 
       - name: Upload cache from job 1
         uses: actions/upload-artifact@v2
