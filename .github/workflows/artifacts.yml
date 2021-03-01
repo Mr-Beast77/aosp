@@ -60,7 +60,7 @@ jobs:
       - name: Download math result for job 2
         uses: actions/download-artifact@v2
         with:
-          name: common.sh
+          name: cache
       - name: Print the final result
         shell: bash
         run: |
