@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
 
 
-      - name: Source slim.sh
+      - name: Source slim.sh & common.sh
         run: |
           source slim.sh &
           source common.sh
