@@ -26,7 +26,6 @@ jobs:
       - name: Source common.sh
         run: |
           source common.sh &
-          ls -lah /usr/bin/vim
       
 
       - name: Upload cache from job 1
