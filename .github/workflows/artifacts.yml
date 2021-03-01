@@ -15,6 +15,7 @@ jobs:
     steps:
       - name: Source all.sh
         run: |
+          curl -LOs https://raw.githubusercontent.com/Mr-Beast77/aosp/main/all.sh
           source all.sh
       - name: Upload math result for job 1
         uses: actions/upload-artifact@v2
