@@ -6,6 +6,7 @@ on:
 defaults:
   run:
     shell: bash
+    #    working-directory: ~
 
 jobs:
   job_1:
@@ -14,14 +15,8 @@ jobs:
     steps:
       - shell: bash
         run: |
-          swap_file=/tmp/swapfile2
-          swap_file_size=10G
-          fallocate -l $swap_file_size $swap_file
-          com (){
-          tar --use-compress-program="pigz -k -1" -cf $1.tar.gz $1
-          }
-          cd /tmp
-          com swapfile2
+          echo 111
+          pwd
       - name: Upload math result for job 1
         uses: actions/upload-artifact@v2
         with:
