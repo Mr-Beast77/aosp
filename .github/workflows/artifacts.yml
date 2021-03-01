@@ -13,8 +13,7 @@ jobs:
     name: upload only 
     runs-on: ubuntu-20.04
     steps:
-      - shell: bash
-        run: |
+      - run: |
           echo 111 > /tmp/hi
           pwd
       - name: Upload math result for job 1
