@@ -29,7 +29,7 @@ jobs:
         timeout-minutes: 30
         continue-on-error: true
         run: |
-          tar --use-compress-program="pigz -k -1" -cf cache.tar.gz common.sh
+          tar --use-compress-program="pigz -1" -cf cache.tar.gz common.sh
 
 
       - name: Upload cache from job 1
@@ -51,8 +51,8 @@ jobs:
           name: cache
       - shell: bash
         run: |
-          echo 2nd job >> test.txt
-          ls -lah /tmp
+          pigz -d cache.tar.gz
+          ls -lah
       - name: Upload math result for job 2
         uses: actions/upload-artifact@v2
         with:
@@ -72,4 +72,5 @@ jobs:
       - name: Print the final result
         shell: bash
         run: |
+          pigz -d cache.tar.gz
           echo bye
