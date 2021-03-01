@@ -4,25 +4,22 @@ on:
   push:
     branches: [ main ]
 defaults:
-  runs-on: ubuntu-20.04
   run:
     shell: bash
 
 jobs:
   job_1:
     name: upload only 
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-
       - name: Source all.sh
         run: |
           source all.sh
           ls
-
       - name: Source slim2
         run: |
           source slim2
-      
       - name: Upload cache from job 1
         uses: actions/upload-artifact@v2
         with:
