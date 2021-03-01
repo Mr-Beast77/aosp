@@ -1,11 +1,14 @@
 name: aosp
+
 on:
   workflow_dispatch:
   push:
     branches: [ main ]
+    
 defaults:
   run:
     shell: bash
+
 
 jobs:
   job_1:
@@ -14,20 +17,24 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+
       - name: Source slim.sh
         run: |
           source slim.sh &
       
+
       - name: Source common.sh
         run: |
           source common.sh &
-          which vim
+          ls -lah /usr/bin/vim
       
+
       - name: Upload cache from job 1
         uses: actions/upload-artifact@v2
         with:
           name: cache
           path: common.sh
+
 
   job_2:
     name: both download and upload
