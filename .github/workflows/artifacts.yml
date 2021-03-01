@@ -21,13 +21,13 @@ jobs:
       - name: Source common.sh
         run: |
           source common.sh &
-          ls
+          which vim
       
       - name: Upload cache from job 1
         uses: actions/upload-artifact@v2
         with:
           name: cache
-          path: all.sh
+          path: common.sh
 
   job_2:
     name: both download and upload
