@@ -28,6 +28,7 @@ jobs:
 
 
       - name: Upload cache from job 1
+        continue-on-error: true
         uses: actions/upload-artifact@v2
         with:
           name: cache
